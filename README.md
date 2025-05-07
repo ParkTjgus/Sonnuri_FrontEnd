@@ -1,22 +1,54 @@
-# 손누리 (Sonnuri) - 프론트엔드
+# React + TypeScript + Vite
 
-👋 **손누리**는 AI 기반 한국 수어 학습 웹 플랫폼입니다.  
-사용자는 수어 영상을 보고 따라하며, 웹캠을 통해 본인의 수어 동작을 실시간으로 인식하고 피드백을 받을 수 있습니다.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 👩‍💻 팀원
+Currently, two official plugins are available:
 
-| 이름   | 학번     |
-| ------ | -------- |
-| 송유진 | 22113654 |
-| 박서현 | 22112100 |
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🌐 프로젝트 개요
+## Expanding the ESLint configuration
 
-- 수어 단어 및 문장 학습
-  - 실시간 수어 인식 및 정확도 피드백
-- 수어 번역 기능 (한국 수어 ↔ 영어 수어)
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## 🛠️ 기술 스택
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-- **React** + **TypeScript**
-- **Vite**
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
