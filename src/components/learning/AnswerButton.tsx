@@ -1,13 +1,32 @@
-interface WordButtonProps {
+interface AnswerButtonProps {
   index: number;
   label: string;
+  isSelected: boolean;
+  onClick: () => void;
 }
 
-const AnswerButton = ({ index, label }: WordButtonProps) => {
+const AnswerButton = ({
+  index,
+  label,
+  isSelected,
+  onClick,
+}: AnswerButtonProps) => {
   return (
-    <button className="flex items-center bg-white h-[4.5rem] w-[544px] rounded-[20px] border border-[#c6c6c8] shadow-button text-left px-6 gap-8 text-2xl">
-      <span className="inline-flex justify-center items-center w-12 h-12 bg-[#D9D9D9] rounded-full">
-        {index}
+    <button
+      onClick={onClick}
+      className={`flex items-center h-[4.5rem] w-[544px] rounded-[20px] border px-6 gap-8 text-2xl shadow-button text-left
+        ${isSelected ? "border-[#007AFF]" : "border-[#c6c6c8]"} bg-white`}
+    >
+      <span className="inline-flex justify-center items-center w-12 h-12">
+        {isSelected ? (
+          <span className="material-symbols-outlined text-[#007AFF]">
+            check
+          </span>
+        ) : (
+          <span className="bg-[#D9D9D9] rounded-full w-full h-full flex justify-center items-center">
+            {index}
+          </span>
+        )}
       </span>
       {label}
     </button>
