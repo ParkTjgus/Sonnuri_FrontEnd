@@ -1,4 +1,4 @@
-import { AnswerButton } from "../components";
+import { AnswerButton, LearningVideo } from "../components";
 import { useAnswerSelection } from "../hooks/useAnswerSelection";
 
 const Learning = () => {
@@ -7,16 +7,19 @@ const Learning = () => {
   const { selectedIndex, select } = useAnswerSelection();
 
   return (
-    <div className="space-y-4">
-      {words.map((word, idx) => (
-        <AnswerButton
-          key={idx}
-          index={idx + 1}
-          label={word}
-          isSelected={selectedIndex === idx}
-          onClick={() => select(idx)}
-        />
-      ))}
+    <div className="flex space-x-20 justify-center mt-20">
+      <LearningVideo />
+      <div className="space-y-4">
+        {words.map((word, idx) => (
+          <AnswerButton
+            key={idx}
+            index={idx + 1}
+            label={word}
+            isSelected={selectedIndex === idx}
+            onClick={() => select(idx)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
