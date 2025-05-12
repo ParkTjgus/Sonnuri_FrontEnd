@@ -3,3 +3,8 @@ export { default as AnswerButton } from "./learning/AnswerButton";
 export { default as PlayButton } from "./learning/PlayButton";
 export { default as SubmitButton } from "./learning/SubmitButton";
 export { default as ResultBox } from "./learning/ResultBox";
+export { default as PracticeButton } from "./learningTest/PracticeButton";
+export { default as AnswerBox } from "./learningTest/AnswerBox";
+export { default as CameraBox } from "./learningTest/CameraBox";
+export { default as NextButton } from "./learningTest/NextButton";
+export { default as AccuracyBox } from "./learningTest/AccuracyBox";
