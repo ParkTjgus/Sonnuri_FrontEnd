@@ -1,6 +1,6 @@
-import { FaBook } from 'react-icons/fa'
-import { TbMessageLanguage } from 'react-icons/tb'
-import { FeatureCard, IntroBanner } from '../components'
+import {FaBook} from 'react-icons/fa'
+import {TbMessageLanguage} from 'react-icons/tb'
+import {FeatureCard, IntroBanner} from '../components'
 
 const Home = () => {
     return (
@@ -15,23 +15,22 @@ const Home = () => {
             </section>
             <section className="flex gap-[10px]">
                 <FeatureCard
-                    icon={<FaBook size={30} />}
+                    icon={<FaBook size={30}/>}
                     title="수어 학습하기"
-                    description="체계적인 커리큘럼으로 기초부터 고급까지 단계별 학습을
-                        제공합니다."
+                    description="체계적인 커리큘럼으로 기초부터 고급까지 단계별 학습을 제공합니다."
                     actionLabel="학습하기"
                     onActionClick={() => console.log('클릭됨')}
-                    bgColor="bg-[#DBEAFE]"
-                    textColor="text-[#2563EB]"
+                    bgColor="blue"
+                    textColor="blue"
                 />
                 <FeatureCard
-                    icon={<TbMessageLanguage size={40} />}
+                    icon={<TbMessageLanguage size={40}/>}
                     title="수어 번역기"
                     description="텍스트를 수어로, 수어를 텍스트로 변환하는 양방향 번역 서비스를 이용해보세요."
                     actionLabel="번역하기"
                     onActionClick={() => console.log('클릭됨')}
-                    bgColor="bg-[#EDE9FE]"
-                    textColor="text-[#7C3AED]"
+                    bgColor="purple"
+                    textColor="purple"
                 />
             </section>
         </div>
