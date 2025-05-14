@@ -1,1 +1,1 @@
-export { default as LearningStage } from './LearningStage.tsx'
+export { default as LearningLevel } from './LearningLevel.tsx'

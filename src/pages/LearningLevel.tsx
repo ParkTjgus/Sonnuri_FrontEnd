@@ -2,7 +2,7 @@ import { useLevelSelection } from '../hooks/useLevelSelection.tsx'
 import { LevelSection, StageSection } from '../components'
 
 
-const LearningStage = () => {
+const LearningLevel = () => {
     const { selectLevel, select } = useLevelSelection()
 
     return (
@@ -24,4 +24,4 @@ const LearningStage = () => {
     )
 }
 
-export default LearningStage
+export default LearningLevel
