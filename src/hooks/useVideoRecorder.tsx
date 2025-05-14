@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {useCallback, useEffect, useRef, useState} from 'react'
 
 export const useVideoRecorder = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -24,8 +24,8 @@ export const useVideoRecorder = () => {
         console.log(videoRef.current)
 
 
-        const audioConstraints = { audio: true }
-        const videoConstraints = { audio: false, video: true }
+        const audioConstraints = {audio: true}
+        const videoConstraints = {audio: false, video: true}
 
 
         try {
@@ -66,13 +66,12 @@ export const useVideoRecorder = () => {
         const day = String(today.getDate()).padStart(2, '0') // 날짜를 두 자리로 만들기 위해 padStart 사용
 
         const formattedDate = `${year}${month}${day}`
-        const fileName = `My video - ${formattedDate}.webm`
-        return fileName
+        return `My video - ${formattedDate}.mp4`;
     }
 
     const downloadVideo = () => {
         mediaRecorder.current?.stop()
-        const videoBlob = new Blob(videoChunks.current, { type: 'mimeType' })
+        const videoBlob = new Blob(videoChunks.current, {type: 'mimeType'})
         const videoUrl = URL.createObjectURL(videoBlob)
         const link = document.createElement('a')
         link.download = generateVideoName()
