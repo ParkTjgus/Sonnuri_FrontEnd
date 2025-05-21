@@ -1,39 +1,35 @@
 import {
-  AnswerButton,
+  AccuracyBox,
+  AnswerBox,
+  CameraBox,
   LearningVideo,
-  PlayButton,
-  ResultBox,
-  SubmitButton,
+  NextButton,
+  PracticeButton,
 } from "../components";
-import { useAnswerSelection } from "../hooks/useAnswerSelection";
 
 const Learning = () => {
-  //TODO: words 정답 받아오고 나머지 3개 랜덤으로 받아오기
-  const words = ["사과", "귤", "복숭아", "딸기"];
-  const { selectedIndex, select } = useAnswerSelection();
-
   return (
-    <div className="min-h-screen space-y-8 flex flex-col items-center mb-24">
-      <div className="flex space-x-20 justify-center mt-20">
+    <div className="flex justify-center items-center min-h-screen mb-24 mt-20 min-w-[1100px]">
+      <div className="grid grid-cols-2 gap-y-10 gap-x-12">
+        {/* row: 0, col: 0 */}
+        <span className="text-lg">제시어</span>
+        {/* row: 0, col: 1 */}
+        <span className="text-lg">실시간 카메라</span>
+        {/* row: 1, col: 0*/}
         <div className="space-y-4">
           <LearningVideo />
-          <PlayButton />
+          <PracticeButton />
         </div>
-
+        {/* row: 1, col: 1*/}
+        <CameraBox />
+        {/* row: 2, col: 0*/}
+        <AnswerBox />
+        {/* row: 2, col: 1*/}
         <div className="space-y-4">
-          {words.map((word, idx) => (
-            <AnswerButton
-              key={idx}
-              index={idx + 1}
-              label={word}
-              isSelected={selectedIndex === idx}
-              onClick={() => select(idx)}
-            />
-          ))}
-          <SubmitButton />
+          <AccuracyBox />
+          <NextButton />
         </div>
       </div>
-      <ResultBox />
     </div>
   );
 };
