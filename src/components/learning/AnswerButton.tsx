@@ -1,3 +1,5 @@
+import { FaCheck } from "react-icons/fa6";
+
 interface AnswerButtonProps {
   index: number;
   label: string;
@@ -19,9 +21,7 @@ const AnswerButton = ({
     >
       <span className="inline-flex justify-center items-center w-12 h-12">
         {isSelected ? (
-          <span className="material-symbols-outlined text-[#007AFF]">
-            check
-          </span>
+          <FaCheck color="#2563EB" />
         ) : (
           <span className="bg-[#D9D9D9] rounded-full w-full h-full flex justify-center items-center">
             {index}
