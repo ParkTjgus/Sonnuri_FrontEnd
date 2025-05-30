@@ -5,9 +5,11 @@ const Header: React.FC = () => {
     <header className="w-full h-[4.5rem] bg-white border-b border-gray-200 px-6">
       <div className="flex items-center justify-between h-full max-w-[1200px] mx-auto w-full">
         <div className="flex-none mr-2">
-          <span className="font-['KoPubBatang'] text-lg whitespace-nowrap text-[#F97015]">
-            손누리
-          </span>
+          <Link to="/">
+            <span className="font-['KoPubBatang'] text-lg whitespace-nowrap text-[#F97015]">
+              손누리
+            </span>
+          </Link>
         </div>
         <nav className="flex-1 flex justify-center space-x-8 text-gray-600 whitespace-nowrap">
           <Link to="/learning">학습하기</Link>
