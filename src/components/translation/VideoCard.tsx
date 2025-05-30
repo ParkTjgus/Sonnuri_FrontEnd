@@ -8,7 +8,6 @@ interface VideoCardProps {
 const VideoCard = ({ title, onActionClick, children, word }: VideoCardProps) => {
     return (
 
-
         <article
             className="w-full flex flex-col gap-[46px] p-[24px] border border-[#F3F4F6] rounded-[16px] shadow-lg">
             <header className="flex gap-[16px] items-center">
