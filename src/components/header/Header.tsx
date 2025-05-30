@@ -12,7 +12,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <nav className="flex-1 flex justify-center space-x-8 text-gray-600 whitespace-nowrap">
-          <Link to="/learning">학습하기</Link>
+          <Link to="/learningLevel">학습하기</Link>
           <Link to="/">미니게임</Link>
           <Link to="/">신조어 등록</Link>
           <Link to="/">수어 노래</Link>
